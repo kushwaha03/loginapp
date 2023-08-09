@@ -12,7 +12,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme:
+            ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 11, 74, 156)),
         useMaterial3: true,
       ),
       home: const Login(title: 'Login Page'),
@@ -86,6 +87,22 @@ class _LoginState extends State<Login> {
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
                         // Navigate the user to the Home page
+
+                        if (emailController.text == "kk@gmail.com" &&
+                            passwordController.text == "12345") {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomePage(
+                                      email: emailController.text,
+                                    )),
+                          );
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                                content: Text('Invalid Credentials')),
+                          );
+                        }
                       } else {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(content: Text('Please fill input')),
@@ -101,5 +118,33 @@ class _LoginState extends State<Login> {
         ),
       ),
     );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key, required this.email});
+
+  final String email;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+          title: const Text('Home Page'),
+        ),
+        body: Column(
+          children: [
+            Text(email),
+            Center(
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: const Text("Go back!"),
+              ),
+            ),
+          ],
+        ));
   }
 }
