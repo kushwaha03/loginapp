@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:loginapp/login.dart';
+import 'login.dart';
 import 'profile.dart';
 
 class HomePage extends StatefulWidget {
