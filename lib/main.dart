@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'home.dart';
+import 'login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,10 +15,10 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme:
-            ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 11, 74, 156)),
+            ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 28, 98, 189)),
         useMaterial3: true,
       ),
-      home: const Login(title: 'Login Page'),
+      home: const LoginPage(),
     );
   }
 }
@@ -48,6 +50,11 @@ class _LoginState extends State<Login> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                child: Text('Welcome to here!'),
+              ),
               Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
@@ -113,6 +120,24 @@ class _LoginState extends State<Login> {
                   ),
                 ),
               ),
+              Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Do not account?',
+                        textAlign: TextAlign.center,
+                      ),
+                      TextButton(
+                        onPressed: () {},
+                        child: const Text(
+                          'Signup',
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ],
+                  )),
             ],
           ),
         ),
@@ -121,30 +146,30 @@ class _LoginState extends State<Login> {
   }
 }
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key, required this.email});
+// class HomePage extends StatelessWidget {
+//   const HomePage({super.key, required this.email});
 
-  final String email;
+//   final String email;
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          title: const Text('Home Page'),
-        ),
-        body: Column(
-          children: [
-            Text(email),
-            Center(
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: const Text("Go back!"),
-              ),
-            ),
-          ],
-        ));
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//         appBar: AppBar(
+//           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+//           title: const Text('Home Page'),
+//         ),
+//         body: Column(
+//           children: [
+//             Text(email),
+//             Center(
+//               child: ElevatedButton(
+//                 onPressed: () {
+//                   Navigator.pop(context);
+//                 },
+//                 child: const Text("Go back!"),
+//               ),
+//             ),
+//           ],
+//         ));
+//   }
+// }
