@@ -11,21 +11,21 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   TextEditingController mailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-
+  bool _validate = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
           Container(
-            height: 150.0,
-            width: 190.0,
-            padding: EdgeInsets.only(top: 40),
+            height: 196.0,
+            width: 196.0,
+            padding: EdgeInsets.only(top: 60),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(200),
             ),
             child: Center(
-              child: Image.asset('images/flutter-logo.png'),
+              child: Image.asset('assets/images/icons8-logo-96.png'),
             ),
           ),
           Padding(
@@ -37,7 +37,8 @@ class _LoginPageState extends State<LoginPage> {
             child: TextField(
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
-                labelText: 'Enter mail',
+                labelText: 'Enter Mail',
+                errorText: _validate ? 'Please enter mail id and pass' : null,
               ),
             ),
           ),
@@ -46,7 +47,8 @@ class _LoginPageState extends State<LoginPage> {
             child: TextField(
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
-                labelText: 'enter password',
+                labelText: 'Enter Password',
+                errorText: _validate ? 'Please enter mail id and pass' : null,
               ),
             ),
           ),
@@ -55,12 +57,21 @@ class _LoginPageState extends State<LoginPage> {
             child: Center(
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
+                  setState(() {
+                    mailController.text.isEmpty
+                        ? _validate = true
+                        : _validate = false;
+                  });
+                  if (!_validate) {
+                    Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (_) => HomePage(
-                                email: "kk",
-                              )));
+                        builder: (_) => HomePage(
+                          email: "kk",
+                        ),
+                      ),
+                    );
+                  }
                 },
                 child: const Text('Login'),
               ),

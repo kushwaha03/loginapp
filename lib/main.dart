@@ -145,31 +145,3 @@ class _LoginState extends State<Login> {
     );
   }
 }
-
-// class HomePage extends StatelessWidget {
-//   const HomePage({super.key, required this.email});
-
-//   final String email;
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//         appBar: AppBar(
-//           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-//           title: const Text('Home Page'),
-//         ),
-//         body: Column(
-//           children: [
-//             Text(email),
-//             Center(
-//               child: ElevatedButton(
-//                 onPressed: () {
-//                   Navigator.pop(context);
-//                 },
-//                 child: const Text("Go back!"),
-//               ),
-//             ),
-//           ],
-//         ));
-//   }
-// }

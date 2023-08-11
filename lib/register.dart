@@ -18,14 +18,14 @@ class _RegisterPageState extends State<RegisterPage> {
       body: Column(
         children: [
           Container(
-            height: 150.0,
-            width: 190.0,
-            padding: EdgeInsets.only(top: 40),
+            height: 196.0,
+            width: 196.0,
+            padding: EdgeInsets.only(top: 60),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(200),
             ),
             child: Center(
-              child: Image.asset('images/flutter-logo.png'),
+              child: Image.asset('assets/images/icons8-logo-96.png'),
             ),
           ),
           Padding(
@@ -37,7 +37,7 @@ class _RegisterPageState extends State<RegisterPage> {
             child: TextField(
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
-                labelText: 'Enter mail',
+                labelText: 'Enter Name',
               ),
             ),
           ),
@@ -46,7 +46,16 @@ class _RegisterPageState extends State<RegisterPage> {
             child: TextField(
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
-                labelText: 'enter password',
+                labelText: 'Enter Mail',
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+            child: TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: 'Enter Password',
               ),
             ),
           ),

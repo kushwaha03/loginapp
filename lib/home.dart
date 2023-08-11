@@ -12,13 +12,21 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int _currentIndex = 0;
+  String _title = '';
+  var appBarTitleText = new Text("Home");
+  @override
+  initState() {
+    _title = 'Home Page';
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false, // Used for removing back buttoon.
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text('Home Page'),
+        title: appBarTitleText,
         actions: [
           FloatingActionButton(
             onPressed: () => Navigator.pop(context, true),
@@ -27,17 +35,23 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
-      body: Column(
-        children: [
-          Padding(padding: EdgeInsets.only(top: 60)),
-          Text(widget.email),
-          Text('welcome!'),
-          Center(),
-        ],
-      ),
+      body: const [
+        Center(
+          child: Text(
+            'Home 🏠',
+          ),
+        ),
+        Center(
+          child: Text(
+            'Search 🔍',
+          ),
+        ),
+        ProfilePage()
+      ][_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-          currentIndex: 0,
+          currentIndex: _currentIndex,
           fixedColor: Colors.green,
+          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           items: const [
             BottomNavigationBarItem(
               label: "Home",
@@ -52,7 +66,27 @@ class _HomePageState extends State<HomePage> {
               icon: Icon(Icons.account_circle),
             ),
           ],
-          onTap: (int indexOfItem) {}),
+          onTap: (int indexOfItem) {
+            setState(() => _currentIndex = indexOfItem);
+            print(_currentIndex);
+            switch (indexOfItem) {
+              case 0:
+                {
+                  appBarTitleText = new Text("Home");
+                }
+                break;
+              case 1:
+                {
+                  appBarTitleText = new Text("Search");
+                }
+                break;
+              case 2:
+                {
+                  appBarTitleText = new Text("Profile");
+                }
+                break;
+            }
+          }),
     );
   }
 }

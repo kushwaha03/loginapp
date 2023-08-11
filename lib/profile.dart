@@ -10,15 +10,18 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false, // Used for removing back buttoon.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text('Home Page'),
-      ),
+      // appBar: AppBar(
+      //   automaticallyImplyLeading: false, // Used for removing back buttoon.
+      //   backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+      //   title: const Text('Home Page'),
+      // ),
       body: Column(
         children: [
           Padding(padding: EdgeInsets.only(top: 60)),
           Text('welcome!'),
+          Text(
+            'Profile 👤',
+          ),
           Center(),
         ],
       ),
