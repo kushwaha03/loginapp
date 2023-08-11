@@ -17,6 +17,7 @@ class _ProfilePageState extends State<ProfilePage> {
       // ),
       body: Column(
         children: [
+          Padding(padding: EdgeInsets.only(top: 60)),
           CircleAvatar(
             backgroundColor: Color(0xffE6E6E6),
             radius: 30,
@@ -25,22 +26,10 @@ class _ProfilePageState extends State<ProfilePage> {
               color: Color(0xffCCCCCC),
             ),
           ),
-          Container(
-            height: 196.0,
-            width: 196.0,
-            padding: EdgeInsets.only(top: 60),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(200),
-            ),
-            child: Center(
-              child: Image.asset('assets/images/icons8-logo-96.png'),
-            ),
-          ),
-          Padding(padding: EdgeInsets.only(top: 60)),
-          Text('welcome!'),
-          Text(
-            'Profile 👤',
-          ),
+          Padding(padding: EdgeInsets.only(top: 20)),
+          Text('welcome KK!'),
+          // Text('Profile 👤'),
+          Text('kk@gmail.com'),
           Center(),
         ],
       ),
