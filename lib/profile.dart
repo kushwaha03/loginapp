@@ -17,6 +17,25 @@ class _ProfilePageState extends State<ProfilePage> {
       // ),
       body: Column(
         children: [
+          CircleAvatar(
+            backgroundColor: Color(0xffE6E6E6),
+            radius: 30,
+            child: Icon(
+              Icons.person,
+              color: Color(0xffCCCCCC),
+            ),
+          ),
+          Container(
+            height: 196.0,
+            width: 196.0,
+            padding: EdgeInsets.only(top: 60),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(200),
+            ),
+            child: Center(
+              child: Image.asset('assets/images/icons8-logo-96.png'),
+            ),
+          ),
           Padding(padding: EdgeInsets.only(top: 60)),
           Text('welcome!'),
           Text(

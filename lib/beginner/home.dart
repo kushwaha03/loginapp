@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'login.dart';
-import 'profile.dart';
+import '../profile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key, required this.email});
@@ -68,7 +68,6 @@ class _HomePageState extends State<HomePage> {
           ],
           onTap: (int indexOfItem) {
             setState(() => _currentIndex = indexOfItem);
-            print(_currentIndex);
             switch (indexOfItem) {
               case 0:
                 {
