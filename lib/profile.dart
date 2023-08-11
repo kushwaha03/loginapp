@@ -17,6 +17,9 @@ class _ProfilePageState extends State<ProfilePage> {
       // ),
       body: Column(
         children: [
+          Padding(padding: EdgeInsets.only(top: 40)),
+          Text('Welcome to my App!'),
+
           Padding(padding: EdgeInsets.only(top: 60)),
           CircleAvatar(
             backgroundColor: Color(0xffE6E6E6),
